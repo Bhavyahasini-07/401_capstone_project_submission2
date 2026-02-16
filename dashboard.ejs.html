@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Amazon Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f3f3f3;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #131921;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar h2 {
+      margin: 0;
+      color: #febd69;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    /* Main Card */
+    .container {
+      margin: 50px auto;
+      width: 500px;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .profile-info {
+      margin-bottom: 20px;
+    }
+
+    .profile-info p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 8px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .profile { background: #007185; }
+    .orders { background: #ff9900; }
+    .cart { background: #28a745; }
+    .shoes { background: #006400; }
+    .logout { background: #dc3545; }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2>Amazon Dashboard</h2>
+    <div>
+      <a href="/profile">Profile</a>
+      <a href="/orders">Orders</a>
+      <a href="/cart">Cart</a>
+      <a href="/logout">Logout</a>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h2>Welcome <%= user.username %> 👋</h2>
+
+    <div class="profile-info">
+      <p><strong>Email:</strong> <%= user.email %></p>
+      <p><strong>User ID:</strong> <%= user.id || "N/A" %></p>
+    </div>
+
+    <a href="/profile" class="btn profile">View Profile</a>
+    <a href="/orders" class="btn orders">My Orders</a>
+    <a href="/cart" class="btn cart">My Cart</a>
+    <a href="/shoes" class="btn shoes">Shop Shoes</a>
+    <a href="/logout" class="btn logout">Logout</a>
+  </div>
+
+</body>
+</html>
